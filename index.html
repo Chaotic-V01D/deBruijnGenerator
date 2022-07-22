@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Mafia Tracker</title>
+	<script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  <h1 id="instructions">Set player cast</h1>
+    <div id="quantitySelector">
+      <label for="playerQuantity"># of Players</label>
+      <br>
+      <select id="playerQuantity" value="4">
+        <option value="4">4 Players</option>
+        <option value="5">5 Players</option>
+        <option value="6">6 Players</option>
+        <option value="7">7 Players</option>
+        <option value="8">8 Players</option>
+        <option value="9">9 Players</option>
+        <option value="10">10 Players</option>
+        <option value="11">11 Players</option>
+      </select>
+    </div>
+    <div id="rolesSelector">
+      <!--If the Mafia and the Janitor select the same player, that player's body is not found and no voting can occur-->
+      <input type="checkbox" id="selector0" value="janitor">
+      <label for="selector0">Janitor</label><br>
+
+      <!--The baker can leave baked goods at somebody's door for them to fidn in the morning-->
+      <input type="checkbox" id="selector1" value="baker">
+      <label for="selector1">Baker</label><br>
+
+      <!--The Town Leader's vote counts for two votes in the morning-->
+      <input type="checkbox" id="selector2" value="town leader">
+      <label for="selector2">Town Leader</label><br>
+
+      <!--If the mafia dies, the players are told of the mafia's death and the mafioso becomes the new mafia, can be killed by the mafia-->
+      <input type="checkbox" id="selector3" value="mafioso">
+      <label for="selector3">Mafioso</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector4" value="jester">
+      <label for="selector4">Gossip</label><br>
+
+      <!--A second mafia member; the two mafia members are aware of each other-->
+      <input type="checkbox" id="selector5" value="second mafia">
+      <label for="selector5">Second Mafia Member</label><br>
+
+      <!--In the night, can choose one person who they suspect of being the mafia and would like to kill; if they choose incorrectly an innocent dies, if they chose correctly then everyone is told that the sherrif killed the mafia-->
+      <input type="checkbox" id="selector6" value="vigilante">
+      <label for="selector6">Vigilante</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector7" value="bomber">
+      <label for="selector7">Bomber</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector8" value="medium">
+      <label for="selector8">Medium</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector9" value="priest">
+      <label for="selector9">Priest</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector10" value="blackmailer">
+      <label for="selector10">Blackmailer</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector11" value="witness">
+      <label for="selector11">Witness</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector12" value="nurse">
+      <label for="selector12">Nurse</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector13" value="psychiatrist">
+      <label for="selector13">Psychiatrist</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector14" value="cult leader">
+      <label for="selector14">Cult Leader</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector15" value="lawyer">
+      <label for="selector15">Lawyer</label><br>
+
+      <!---->
+      <input type="checkbox" id="selector16" value="revenant">
+      <label for="selector16">Revenant</label><br>
+    </div>
+    <br>
+    <div id="roleSummary">
+      A game with 4 players;
+      <br>
+      There is 1 mafia
+      <br>
+      There is 1 doctor
+      <br>
+      There is 1 investigator
+      <br>
+      There are 1 villager(s)
+    </div>
+    <div id="ctrlBtns">
+      <button class="button" onclick="runGame()">Play</button>
+      <button class="button" onclick="resetRoles()">Reset</button>
+    </div>
+    <div id="nightActivity" style="display:none;" class="wrapper">
+      <div class="row">
+        <div class="column">
+          <div class="rolesColumn">
+            <!--<button class="button">stephen</button>-->
+          </div>
+        </div>
+        <div class="column">
+          <div class="connectionColumn">
+
+          </div>
+        </div>
+        <div class="column">
+          <div class="playersColumn">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nightSummary">
+    </div>
+  </body>
+</html>
